@@ -1,5 +1,5 @@
-## Creates a special matrix which stores a matrix and its inverse
-## When the matrix of the inverse is computed, the inverse is stored/cached
+## Creates a special matrix which stores a matrix and its inverse 'makeCacheMatrix'
+## When the matrix of the inverse is computed 'cacheSolve', the inverse is stored/cached
 ## for future use
 
 ## example:
