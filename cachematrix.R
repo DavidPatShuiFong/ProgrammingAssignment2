@@ -45,14 +45,17 @@ cacheSolve <- function(x, ...) {
   ## and is returned without being calculated again when
   ## cacheSolve(x) is called in future
 
+  ## firstly retrieve the stored inverse (if any) from 'x'
   i <- x$getinverse()
   if (!is.null(i)) {
     message("getting cached data")
     return(i)
   }
+  ## if no stored inverse available, then compute the inverse
   data <- x$get()
   ## compute inverse of matrix 'data'
   i <- solve(data)
+  ## store inverse for future retrieval
   x$setinverse(i)
   i
 }
