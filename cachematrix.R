@@ -15,6 +15,10 @@
 ## created by this function
 makeCacheMatrix <- function(x = matrix()) {
   ## (matrix) -> (special function storing matrix and its inverse)
+
+  ## $get returns the currently stored matrix
+  ## $setinverse stores the computed inverse of the matrix (typically computed by function cacheSolve)
+  ## $getinverse returns the stored inverse of matrix 'x'
   
   ## store inverse of matrix in matrix.inverse
   matrix.inverse <- NULL
@@ -25,12 +29,8 @@ makeCacheMatrix <- function(x = matrix()) {
     matrix.inverse <<- NULL
   }
   
-  ## get returns the currently stored matrix
   get <- function() x
-  ## setinverse stores the computed inverse of the matrix
-  ## typically the inverse is computed by function cacheSolve
   setinverse <- function(inverse) matrix.inverse <<- inverse
-  ## getinverse returns the stored inverse of the matrix 'x'
   getinverse <- function() matrix.inverse
   list (set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
